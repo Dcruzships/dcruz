@@ -26,4 +26,4 @@ jobs:
       run: |
         npm ci
         npm run build
-        npm run ng -- deploy --cname=brandondcruz.com --name="cptnbrando" --email="brandon.dcruz@revature.net" --repo=https://github.com/cptnbrando/dcruz.git --no-silent
+        npm run ng -- deploy --cname=brandondcruz.com --name="dcruzships" --email="bdcruz128@gmail.com" --repo=https://github.com/Dcruzships/dcruz.git --no-silent
