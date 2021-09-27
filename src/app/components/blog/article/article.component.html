@@ -1,0 +1,16 @@
+<ng-scrollbar #scrollable track="all" pointerEventsMethod="scrollbar" *ngIf="this.article" @fadeSlideUpDown>
+    <div id="article">
+        <div id="head">
+            <span id="title">
+                <h1>{{this.article.title}}</h1>
+            </span>
+            <div id="info">
+                <h5 id="author">Written by {{this.article.author}}</h5>
+                <h5 id="date">{{this.article.date}}</h5>
+            </div>
+        </div>
+        <div id="body">
+            <p>{{this.article.body}}</p>
+        </div>
+    </div>
+</ng-scrollbar>

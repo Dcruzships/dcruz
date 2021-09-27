@@ -1,0 +1,11 @@
+app-header {
+    max-width: 100vw;
+    padding-right: 30px;
+}
+
+.window {
+    overflow: hidden;
+    width: 100vw;
+    max-width: 100vw;
+    height: calc(100% - 7vh - 2px);
+}

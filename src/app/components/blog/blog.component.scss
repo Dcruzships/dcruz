@@ -1,0 +1,40 @@
+$text-primary: #b6b6b6;
+$text-secondary: #ececec;
+$bg-primary: #23232e;
+$bg-secondary: #141418;
+$transition-speed: 600ms;
+
+app-header {
+  position: relative;
+  display: block;
+}
+
+article {
+  height: 100%;
+}
+
+.window {
+  height: calc(100% - 7vh - 2px);
+  side-nav {
+    overflow-y: hidden;
+    position: fixed;
+    background-color: $bg-primary;
+    height: inherit;
+    z-index: 10;
+  }
+}
+
+.ng-scrollbar,
+.ng-scroll-content {
+  overflow-x: hidden;
+}
+
+#blog {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}

@@ -43,3 +43,13 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+environment.prod.ts
+environment.ts
+google.environment.ts
+
+# Auth
+/src/assets/credentials.json
+/src/assets/blog.credentials.json
+
+.env

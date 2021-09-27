@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: gh-pages deployment
+
+# Controls when the workflow will run
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.4.x'
+
+    - name: Prepare and deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BLOG_PRIVATE_KEY: ${{ secrets.BLOG_PRIVATE_KEY }}
+        BLOG_CLIENT_EMAIL: ${{ secrets.BLOG_CLIENT_EMAIL }}
+      run: |
+        npm ci
+        npm run build
+        npm run ng -- deploy --cname=brandondcruz.com --name="cptnbrando" --email="brandon.dcruz@revature.net" --repo=https://github.com/cptnbrando/dcruz.git --no-silent

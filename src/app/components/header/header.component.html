@@ -1,0 +1,16 @@
+<div id="header" class="head">
+    <div id="bdcruz">
+        <app-typed [text]="this.title" [array]="this.headers" class="clickable"></app-typed>
+    </div>
+    <div class="nav" id="myNav">
+        <span *ngFor="let link of links; index as i" class="navLink clickable" (click)="move(link)">{{link}}</span>
+        <span id="mobile" class="icon">
+            <button id="menuButt" mat-button [matMenuTriggerFor]="menu">
+                <fa-icon [icon]="faBars"></fa-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item *ngFor="let link of links; index as i" (click)="move(link)">{{link}}</button>
+            </mat-menu>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+.window {
+	height: calc(100vh - 7vh);
+	width: 100%;
+}
+
+.hide {
+	display: none;
+}
+
+#emoji {
+	filter: opacity(10%);
+	// this display has it repeating for the entire page
+	display: inline-flex;
+	// This is a cheaty way to get it off the screen...
+	position: absolute;
+	right: 1000px;
+	bottom: 1000px;
+}
+
+.emo {
+	font-size: 50px;
+}
+
+#bio {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+
+	p {
+		font-family: "Montserrat", sans-serif;
+		width: 60%;
+		font-size: 4rem;
+		padding-bottom: 7vh;
+		text-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	}
+}
+
+.flexin {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@supports ((background-image: -moz-element(#emoji))) {
+	#front {
+		background-image: -moz-element(#emoji);
+		background-attachment: fixed;
+	}
+}
+
+@supports (not (background-image: -moz-element(#emoji))) {
+	#front {
+		background-image: url(https://i.imgur.com/M8lX7cB.png);
+		background-attachment: fixed;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	#front {
+		background-position: center;
+	}
+
+	#bio {
+		p {
+			width: 80%;
+			font-size: 2.5em;
+		}
+	}
+}

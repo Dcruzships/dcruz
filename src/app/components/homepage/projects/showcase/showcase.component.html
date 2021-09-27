@@ -1,0 +1,16 @@
+<swiper [slidesPerView]="1" [spaceBetween]="10" [loop]="true" [pagination]="{clickable: true}" [navigation]="true"
+  class="mySwiper" (slideChange)="change()" (swiper)="onSwiper($event)" (mouseenter)="showInfo=info(1)"
+  (mouseleave)="showInfo=info(0)">
+    <ng-template swiperSlide *ngFor="let project of projects">
+        <video [autoplay]="false" [muted]="true" [loop]="true" class="vid" [id]="project.id">
+          <source [src]="project.media" type="video/webm">
+          <source [src]="project.mediaAlt" type="video/mp4">
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+        <div class="info">
+          <h3 class="proj" *ngIf="showInfo" @OutIn><a [href]="project.link"
+              target="_blank">{{project.name}}</a></h3>
+          <p class="desc" *ngIf="showInfo" @InOut>{{project.description}}</p>
+        </div>
+    </ng-template>
+</swiper>

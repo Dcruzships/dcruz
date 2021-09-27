@@ -1,0 +1,252 @@
+.window {
+    height: calc(100% - 7vh);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25px;
+
+    #contactHead {
+        flex: 0 0 10%;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    grid-auto-rows: minmax(100px, auto);
+    width: 90%;
+    height: 90%;
+    flex: auto;
+
+    .gridItem {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border: solid;
+    }
+
+    .email {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .media {
+        grid-column: 1 / 3;
+        grid-row: 2 / 4;
+    }
+
+    .social {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    grid-auto-rows: 1fr;
+    width: 100%;
+    height: 100%;
+
+    .gridItem {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .pic {
+        grid-column: 3;
+        grid-row: 1 / 5;
+        border: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .vid {
+        grid-column: 1 / 3;
+        grid-row: 1 / 5;
+        border: none;
+        border-right: solid;
+    }
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.gradient {
+    background: linear-gradient(134deg, #18d9a7, #d96e18, #c549d4, #eae505, #1e55e4);
+    background-size: 1000% 1000%;
+
+    -webkit-animation: Gradient 25s ease infinite;
+    -moz-animation: Gradient 25s ease infinite;
+    animation: Gradient 25s ease infinite;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    fa-icon {
+        color: white;
+        transition: 0.3s;
+        &:hover {
+            color: black;
+        }
+    }
+
+    .icon {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 5px;
+    }
+}
+
+a {
+    color: black;
+    transition: 0.3s;
+    &:hover {
+        color: red;
+    }
+}
+
+#scroll-container {
+    border: 3px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: 0.5s;
+    &:hover {
+        border-color: red;
+    }
+}
+
+$width: 50%;
+$time: 150s;
+
+#scroll-text {
+    white-space: nowrap;
+    /* animation properties */
+    -moz-transform: translateX($width);
+    -webkit-transform: translateX($width);
+    transform: translateX($width);
+
+    -moz-animation: my-animation $time linear infinite;
+    -webkit-animation: my-animation $time linear infinite;
+    animation: my-animation $time linear infinite;
+}
+
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from {
+        -moz-transform: translateX($width);
+    }
+
+    to {
+        -moz-transform: translateX(-$width);
+    }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateX($width);
+    }
+
+    to {
+        -webkit-transform: translateX(-$width);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX($width);
+        -webkit-transform: translateX($width);
+        transform: translateX($width);
+    }
+
+    to {
+        -moz-transform: translateX(-$width);
+        -webkit-transform: translateX(-$width);
+        transform: translateX(-$width);
+    }
+}
+
+// Gradient
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 82%
+  }
+
+  50% {
+    background-position: 100% 19%
+  }
+
+  100% {
+    background-position: 0% 82%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 82%
+  }
+
+  50% {
+    background-position: 100% 19%
+  }
+
+  100% {
+    background-position: 0% 82%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 82%
+  }
+
+  50% {
+    background-position: 100% 19%
+  }
+
+  100% {
+    background-position: 0% 82%
+  }
+}
+
+@media only screen and (max-width: 800px) {
+    img {
+        width: auto;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .grid2 {
+        .vid {
+            grid-column: 0;
+            display: none;
+        }
+
+        .pic {
+            grid-column: 1 / 4;
+        }
+    }
+}

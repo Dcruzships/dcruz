@@ -1,0 +1,6 @@
+<app-header></app-header>
+<div class="window">
+    <side-nav [articles]="docs" (changeArticleEvent)="this.changeArticle($event)" *ngIf="true"></side-nav>
+    <article [article]="article" *ngIf="this.article"></article>
+    <loading *ngIf="!this.article"></loading>
+</div>

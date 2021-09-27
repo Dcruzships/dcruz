@@ -1,27 +1,41 @@
-# Dcruz
+# Dcruz - My Personal Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+This is a website for myself, Brandon Dcruz. Created with Angular 12.2.1 and hosted through GitHub Pages. It features a dynamic Blog through the Google Drive/Docs API, a canvas visualizer for my music, links to my projects, and contact information.
 
-## Development server
+## Technologies Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Angular 12.2.1
+- Node.js 16.4.0
+- npm 7.20.6
+- [@fortawesome/angular-fontawesome 0.9.0](https://www.npmjs.com/package/@fortawesome/angular-fontawesome)
+- [jsrsasign 10.4.0](https://www.npmjs.com/package/jsrsasign)
+- [Angular Custom Scrollbar 7.6.1](https://www.npmjs.com/package/ngx-scrollbar)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Dynamic Blog - uses Google APIs through a generated jsrsasign JWT to view and parse all Google Docs from a Google Drive.
+- Canvas Music Visualizer - presents all music created by me as Captain Brando! in a colorful and vivid canvas sketch.
 
-## Build
+## 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Getting Started
 
-## Running unit tests
+```
+Clone this repository
+```
+> git clone https://github.com/cptnbrando/dcruz
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm install
+```
+> npm i
 
-## Running end-to-end tests
+## **Usage**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+Run angular project
+```
+> npm run start
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

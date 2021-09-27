@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <ul class="navbar-nav">
+        <li class="logo">
+            <a href="/blog" class="nav-link">
+                <fa-icon [icon]="faCoffee"></fa-icon>
+                <span class="link-text logo-text">am_blog</span>
+            </a>
+        </li>
+
+        <li class="nav-item" *ngFor="let art of articles" class="clickable">
+            <a class="nav-link" (click)="this.changeArticleEvent.emit(art)">
+                <fa-icon [icon]="faNewspaper"></fa-icon>
+                <span class="link-text">{{art.title}}</span>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <fa-icon [icon]="faHome"></fa-icon>
+                <span class="link-text">Home</span>
+            </a>
+        </li>
+    </ul>
+</nav>

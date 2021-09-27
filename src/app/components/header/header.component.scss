@@ -1,0 +1,62 @@
+#header {
+    height: 7vh;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid;
+    font-size: larger;
+    overflow: hidden;
+    background-color: white;
+    position: inherit;
+    z-index: 10;
+    overflow: hidden;
+
+    // disable text highlighting
+    user-select: none;
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+
+    #bdcruz {
+        margin-left: 16px;
+    }
+    
+    .navLink {
+        font-weight: 600;
+        margin: 10px;
+
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+#mobile {
+    display: none;
+}
+
+ /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+ @media screen and (max-width: 800px) {
+   .nav span {
+        display: none;
+   }
+
+   #mobile {
+        float: right;
+        display: flex;
+        margin-right: 10px;
+
+        #menuButt {
+            background-color: white;
+            width: 2rem;
+            height: 2rem;
+        }
+   }
+ }

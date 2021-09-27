@@ -1,0 +1,161 @@
+#music {
+	height: calc(100vh - 7vh);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 10px;
+
+	app-visualizer {
+		display: flex;
+		height: 100%;
+        width: 100%;
+        justify-content: center;
+	}
+}
+
+.musicItem {
+	width: 60%;
+	flex: 0 0 15%;
+}
+
+#MusicLabel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 5%;
+}
+
+#visualizer {
+	flex: 1 0 auto;
+	width: 95%;
+	height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#controls {
+	flex: 0 1 auto;
+	width: 95%;
+}
+
+#seeker {
+	width: auto;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border: solid;
+
+	mat-slider {
+		color: black;
+		flex: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	span {
+		flex: 0.03;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+#volume {
+	display: flex;
+	justify-content: flex-start;
+
+	span {
+		flex: 0.45;
+	}
+
+	mat-slider {
+		flex: 1;
+	}
+
+	.spacer {
+		flex: 1;
+		&:first-of-type {
+			display: none;
+		}
+	}
+}
+
+#player {
+	display: flex;
+	flex-direction: row;
+	border: solid;
+	width: auto;
+	justify-content: center;
+
+	.control {
+		display: flex;
+		align-items: center;
+		flex: 1;
+	}
+
+	#icons {
+		justify-content: center;
+	}
+
+	#link {
+		display: flex;
+		flex-direction: column;
+		margin-right: 15px;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	fa-icon {
+		margin: 20px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	#player {
+		padding-top: 10px;
+		display: flex;
+		flex-direction: column-reverse;
+
+		#icons, #link {
+			justify-content: center;
+			align-items: center;
+		}
+
+		#icons {
+			padding-top: 5px;
+			padding-bottom: 5px;
+
+			span, fa-icon {
+				margin: 0.6rem;
+			}
+		}
+
+		#link {
+			margin: 0;
+		}
+
+		fa-icon {
+			margin: 0;
+		}
+	}
+
+	#volume {
+		justify-content: center;
+		align-items: center;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		mat-slider {
+			margin: 0;
+		}
+
+		.spacer {
+			flex: 1;
+            
+			&:first-of-type {
+				display: block;
+			}
+		}
+	}
+}

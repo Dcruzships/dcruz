@@ -1,0 +1,36 @@
+.window {
+	height: calc(100vh - 7vh);
+	width: 100%;
+}
+
+#BlogLabel {
+    display: flex;
+    width: 100%;
+
+    .list {
+        text-align: center;
+    }
+}
+
+a {
+    color: black;
+    &:visited {
+        color: black;
+    }
+}
+
+#lists {
+    display: flex;
+    width: 100%;
+}
+
+.list {
+    padding: 15px;
+    flex: 1;
+}
+
+ @media screen and (max-width: 800px) {
+    .log {
+        display: none;
+    }
+ }

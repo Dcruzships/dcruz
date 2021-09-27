@@ -1,0 +1,54 @@
+<div class="window snap" id="music">
+    <div id="MusicLabel" class="musicItem">
+        <h2>🎶Music🎶</h2>
+    </div>
+    <div id="visualizer" class="musicItem">
+        <app-visualizer [isPlaying]="isPlaying"></app-visualizer>
+    </div>
+    <div id="controls" class="musicItem">
+        <div id="seeker">
+            <span class="seeker-time">{{_position | async}}</span>
+            <mat-slider min="0" max="100" step="1" thumbLabel [displayWith]="formatLabel.bind(this)"
+              (input)="onSliderMove()"
+              (change)="onSliderChange()" [(ngModel)]="this.sliderPos">
+            </mat-slider>
+            <span class="seeker-time" id="duration">{{_duration}}</span>
+        </div>
+        <div id="player">
+            <div id="volume" class="control">
+                <div class="spacer"></div>
+                <span id="volumeIcon" (click)="(this.volume === 0) ? this.volume = 30 : this.volume = 0">
+                    <fa-icon class="clickable" [icon]="faVolumeUp" size="2x" *ngIf="this.volume >= 50"></fa-icon>
+                    <fa-icon class="clickable" [icon]="faVolumeDown" size="2x" *ngIf="this.volume < 50 && this.volume > 1"></fa-icon>
+                    <fa-icon class="clickable" [icon]="faVolumeMute" size="2x" *ngIf="this.volume === 0"></fa-icon>
+                </span>
+                <mat-slider min="0" max="100" step="1" [(ngModel)]="volume"></mat-slider>
+                <div class="spacer"></div>
+            </div>
+            <div id="icons" class="control">
+                <fa-icon class="clickable" [icon]="faLeft" size="2x" (click)="this.changeTrack(-1)"></fa-icon>
+                <span (click)="this.shuffle = !this.shuffle;">
+                    <fa-icon class="clickable" [icon]="faRandom" size="2x" *ngIf="this.shuffle" style="color:red">
+                    </fa-icon>
+                    <fa-icon class="clickable" [icon]="faRandom" size="2x" *ngIf="!this.shuffle"></fa-icon>
+                </span>
+                <span (click)="this.playPause()">
+                    <fa-icon class="clickable" [icon]="faPlay" size="2x" *ngIf="!this.isPlaying"></fa-icon>
+                    <fa-icon class="clickable" [icon]="faPause" size="2x" *ngIf="this.isPlaying"></fa-icon>
+                </span>
+                <span (click)="this.loop = !this.loop;">
+                    <fa-icon class="clickable" [icon]="faSync" size="2x" *ngIf="this.loop" style="color: red"></fa-icon>
+                    <fa-icon class="clickable" [icon]="faSync" size="2x" *ngIf="!this.loop"></fa-icon>
+                </span>
+                <fa-icon class="clickable" [icon]="faRight" size="2x" (click)="this.changeTrack(1)"></fa-icon>
+            </div>
+            <div id="link" class="control">
+                <span>{{this.track.artist}}</span>
+                <span>{{this.track.name}}</span>
+            </div>
+        </div>
+    </div>
+    <audio data-playing="no" crossOrigin="anonymous" [loop]="this.loop" [volume]="this.volume / 100" (ended)="this.changeTrack(1)" #audio>
+        <source [src]="this.track.src" type="audio/mp3">
+    </audio>
+</div>
