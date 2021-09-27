@@ -23,7 +23,7 @@ This is a website for myself, Brandon Dcruz. Created with Angular 12.2.1 and hos
 ```
 Clone this repository
 ```
-> git clone https://github.com/cptnbrando/dcruz
+> git clone https://github.com/Dcruzships/dcruz
 
 ```
 npm install
